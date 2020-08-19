@@ -19,6 +19,12 @@ mongoose.connection.once('open', () => {
     console.log("connected to mongo");
 })
 
+// Default Route
+// Default route:
+app.get("/", (req, res) => {
+    res.redirect("/fruits");
+  });
+
 // Controller
 const fruitsController = require('./controllers/fruits');
 app.use('/fruits', fruitsController);
